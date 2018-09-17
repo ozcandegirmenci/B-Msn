@@ -1,0 +1,93 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3C31B40-3A4A-4FAC-8D3F-09423C3473F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bmsn.Protocol</RootNamespace>
+    <AssemblyName>Bmsn.Protocol</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientStatus.cs" />
+    <Compile Include="CommandCollection.cs" />
+    <Compile Include="CommandExecuteHandler.cs" />
+    <Compile Include="CommandStatus.cs" />
+    <Compile Include="CommandSubscriptionManager.cs" />
+    <Compile Include="CommandNames.cs" />
+    <Compile Include="CommandSecurityLevel.cs" />
+    <Compile Include="CommandStatusChangedEventArgs.cs" />
+    <Compile Include="DynamicObjectCreator.cs" />
+    <Compile Include="NetCommand.cs" />
+    <Compile Include="NetResponse.cs" />
+    <Compile Include="ParameterCollection.cs" />
+    <Compile Include="Parameters\IParameter.cs" />
+    <Compile Include="Parameters\ParameterEmpty.cs" />
+    <Compile Include="Parameters\Parameter.cs" />
+    <Compile Include="Parameters\ParameterBoolean.cs" />
+    <Compile Include="Parameters\ParameterByte.cs" />
+    <Compile Include="Parameters\ParameterByteArray.cs" />
+    <Compile Include="Parameters\ParameterChar.cs" />
+    <Compile Include="Parameters\ParameterCommand.cs" />
+    <Compile Include="Parameters\ParameterDateTime.cs" />
+    <Compile Include="Parameters\ParameterDecimal.cs" />
+    <Compile Include="Parameters\ParameterDouble.cs" />
+    <Compile Include="Parameters\ParameterFactory.cs" />
+    <Compile Include="Parameters\ParameterImage.cs" />
+    <Compile Include="Parameters\ParameterInt16.cs" />
+    <Compile Include="Parameters\ParameterInt32.cs" />
+    <Compile Include="Parameters\ParameterInt64.cs" />
+    <Compile Include="Parameters\ParameterResponse.cs" />
+    <Compile Include="Parameters\ParameterSByte.cs" />
+    <Compile Include="Parameters\ParameterSingle.cs" />
+    <Compile Include="Parameters\ParameterString.cs" />
+    <Compile Include="Parameters\ParameterUInt16.cs" />
+    <Compile Include="Parameters\ParameterUInt32.cs" />
+    <Compile Include="Parameters\ParameterUInt64.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerBinaryReader.cs" />
+    <Compile Include="ServerBinaryWriter.cs" />
+    <Compile Include="SocketReader.cs" />
+    <Compile Include="SocketStatus.cs" />
+    <Compile Include="SystemErrorEventArgs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
