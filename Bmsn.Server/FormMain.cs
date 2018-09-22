@@ -266,6 +266,38 @@ namespace Bmsn.Server
             MessageBox.Show(e.Exception.ToString(), "Error");
 		}
 
+        private void lvwUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwUsers.SelectedItems == null || lvwUsers.SelectedItems.Count == 0)
+            {
+                btnDisconnect.Enabled = false;
+            }
+            else
+            {
+                btnDisconnect.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Forces a client disconnect
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            if (lvwUsers.SelectedIndices == null || lvwUsers.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+            var client = lvwUsers.SelectedItems[0].Tag as ServerClient;
+            if (client != null)
+            {
+                client.Disconnect();
+            }
+        }
+
         #endregion
+
     }
 }

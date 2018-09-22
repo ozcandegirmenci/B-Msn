@@ -41,6 +41,7 @@ namespace Bmsn.Server
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imgStatuses = new System.Windows.Forms.ImageList(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
+            this.btnDisconnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // server
@@ -91,6 +92,7 @@ namespace Bmsn.Server
             this.lvwUsers.TabIndex = 2;
             this.lvwUsers.UseCompatibleStateImageBehavior = false;
             this.lvwUsers.View = System.Windows.Forms.View.Details;
+            this.lvwUsers.SelectedIndexChanged += new System.EventHandler(this.lvwUsers_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -124,17 +126,29 @@ namespace Bmsn.Server
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(166, 12);
+            this.lblStatus.Location = new System.Drawing.Point(296, 9);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(77, 13);
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "Last Command";
+            // 
+            // btnDisconnect
+            // 
+            this.btnDisconnect.Enabled = false;
+            this.btnDisconnect.Location = new System.Drawing.Point(165, 3);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(75, 23);
+            this.btnDisconnect.TabIndex = 4;
+            this.btnDisconnect.Text = "Disconnect";
+            this.btnDisconnect.UseVisualStyleBackColor = true;
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 457);
+            this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lvwUsers);
             this.Controls.Add(this.btnStop);
@@ -161,7 +175,7 @@ namespace Bmsn.Server
 		private System.Windows.Forms.ColumnHeader columnHeader3;
 		private System.Windows.Forms.ColumnHeader columnHeader4;
 		private System.Windows.Forms.ImageList imgStatuses;
-
-	}
+        private System.Windows.Forms.Button btnDisconnect;
+    }
 }
 
